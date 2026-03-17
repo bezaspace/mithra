@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: raksha-backend
+    runtime: python
+    repo: https://github.com/bezaspace/rak4.git
+    rootDir: "back end"
+    plan: free
+    region: oregon
+    autoDeployTrigger: off
+    buildCommand: pip install uv && uv sync --frozen
+    startCommand: .venv/bin/uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: APP_NAME
+        value: raksha
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash-native-audio-preview-12-2025
+      - key: FRONTEND_ORIGIN
+        value: https://raksha-frontend-sage.vercel.app
+      - key: LOG_LEVEL
+        value: info
+      - key: GEMINI_API_KEY
+        sync: false
