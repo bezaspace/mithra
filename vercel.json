@@ -1,0 +1,20 @@
+{
+  "framework": "vite",
+  "installCommand": "cd \"front end\" && bun install",
+  "buildCommand": "cd \"front end\" && bun run build",
+  "outputDirectory": "front end/dist",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://mithra-backend-0f0r.onrender.com/api/$1"
+    },
+    {
+      "source": "/health",
+      "destination": "https://mithra-backend-0f0r.onrender.com/health"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
