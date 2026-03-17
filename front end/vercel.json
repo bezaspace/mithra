@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://raksha-backend-xptj.onrender.com/api/$1"
+      "destination": "https://mithra-backend-0f0r.onrender.com/api/$1"
     },
     {
       "source": "/health",
-      "destination": "https://raksha-backend-xptj.onrender.com/health"
+      "destination": "https://mithra-backend-0f0r.onrender.com/health"
     },
     {
       "source": "/(.*)",
